@@ -12,6 +12,10 @@ const ProductGrid = () => {
         keyExtractor={(item, index) => index.toString()}
         contentContainerStyle={styles.products}
         scrollEnabled={false}
+      
+      
+     
+        
         renderItem={({ item }) => (
           <View style={styles.product}>
             <Image
@@ -59,6 +63,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   products: {
+ display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
     gap: 20,
