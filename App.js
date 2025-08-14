@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import AddProduct from "./pages/AddProduct";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import Cart from "./pages/Cart";
 
 const Tab = createBottomTabNavigator();
 
@@ -30,7 +31,15 @@ const App = () => {
             ),
           }}
         />
-
+        <Tab.Screen
+          name="Cart"
+          component={Cart}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <AntDesign name="shoppingcart" size={size} color={color} />
+            ),
+          }}
+        />
 
       </Tab.Navigator>
 

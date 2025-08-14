@@ -1,9 +1,11 @@
 import React from "react";
 import { FlatList, Image, Text, StyleSheet, View, TouchableOpacity } from "react-native";
 import useProductStore from "../store/productStore";
+import useCartStore from "../store/cartStore";
 
 const ProductGrid = () => {
   const { products } = useProductStore();
+  const { addToCart } = useCartStore();
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Products</Text>
@@ -28,7 +30,7 @@ const ProductGrid = () => {
               <Text style={styles.itemName}>{item.itemName}</Text>
               <Text style={styles.itemPrice}>₦{item.itemPrice}</Text>
                 </View>
-                <TouchableOpacity style={styles.cart}>
+                <TouchableOpacity style={styles.cart} onPress={() => addToCart(item)}>
                     <Text style={styles.cartText}>Add To Cart</Text>
                 </TouchableOpacity>
           </View>
