@@ -14,6 +14,8 @@ import useCartStore from "../store/cartStore";
 const Cart = () => {
   const { cartItems, clearCart, removeFromCart } = useCartStore();
 
+ 
+
   if (cartItems.length === 0) {
     return (
       <SafeAreaView style={styles.container}>
